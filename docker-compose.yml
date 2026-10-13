@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: mysql-nestjs-tutorial3
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: api_rest
+      MYSQL_USER: api_user
+      MYSQL_PASSWORD: api123
+    ports:
+      - "3308:3306"
+    volumes:
+      - nestjs_tutorial3_mysql_data:/var/lib/mysql
+
+volumes:
+  nestjs_tutorial3_mysql_data:
